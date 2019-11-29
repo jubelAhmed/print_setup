@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- css -->
+    <link rel="stylesheet" href="./css/new.css">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    <script src="https://kit.fontawesome.com/556c185ab7.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.7.8/angular.min.js"
+        integrity="sha256-23hi0Ag650tclABdGCdMNSjxvikytyQ44vYGo9HyOrU=" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="./js/new.js"></script>
+
+    <title>Sales Report</title>
+</head>
+
+<body ng-app="myApp" >
+
+    <div ng-controller="salesOrderControl" class="all_sales_container">
+
+        <div class="container mt-2 px-2 py-4 " ng-repeat="sale in sales.sales_order">
+            <div class="row">
+                <div class="col-4">
+                    <center> <img src="./img/door_shop.jpg" alt="" width="100" height="100"></center>
+                </div>
+
+                <div class="col-sm-5 text-primary px-2">
+
+                    <center>
+                        <h3>{{sale.company_details.shop_name}}</h3>
+                        <h5>{{sale.company_details.address}}<h5>
+                                <h5>{{sale.company_details.phone}}<h5>
+                    </center>
+
+                </div>
+            </div>
+            <div class="row mt-2">
+                <div class="col-md-4"></div>
+                <div class="col-md-3 ">
+                    <center>
+                        <br>
+                        <h4 class="text-capitalize">{{sale.catagory}}</h4>
+                    </center>
+                </div>
+                <div class="col-md-5">
+                    <div class="row">
+                        <div class="col-md-6">Order#</div>
+                        <div class="col-md-6">{{sale.order_id}}</div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6"><span>Date of Order:</span></div>
+                        <div class="col-md-6">{{sale.order_date}}</div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="row border border-secondary mx-1 p-2">
+                <div class="col-md-6">
+                    <h5>Sold To:</h5>
+                    <br>
+                    <h5>{{sale.buyer_info.name}}</h5>
+                    <span>{{sale.buyer_info.address}}</span>
+                    <br>
+                    <span>{{sale.buyer_info.payment_type}}</span>
+                    <br>
+                    <span>{{sale.buyer_info.phone}}</span>
+
+
+                </div>
+                <div class="col-md-6 border-left border-secondary">
+                    <h5>Ship To:</h5>
+                    <br>
+                    <h5>{{sale.shipping_details.contact_name}}</h5>
+                    <p>{{sale.shipping_details.address}}</p>
+                    <p>{{sale.shipping_details.phone}}</p>
+
+                </div>
+            </div>
+
+
+
+            <div class="mt-3">
+                <table style="border:2px solid darkgray " class="table table-bordered">
+                    <thead>
+                        <tr >
+                            <th scope="col">Date Needed</th>
+                            <th scope="col">Date Shipped</th>
+                            <th scope="col">Terms</th>
+                            <th scope="col">Ship Via</th>
+                            <th scope="col">Sales Person</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>{{sale.needed_date}}</td>
+                            <td>{{sale.shipped_date}}</td>
+                            <td>{{sale.terms}}</td>
+                            <td>{{sale.ship_via}}</td>
+                            <td>{{sale.sales_person}}</td>
+
+                        </tr>
+
+                    </tbody>
+                </table>
+            </div>
+
+            <div>
+                <table style="border:2px solid darkgray" class="table table-bordered">
+                    <thead>
+                        <tr >
+                            <th scope="col">prodct ID</th>
+                            <th scope="col">Qty Order</th>
+                            <th scope="col">UOM</th>
+                            <th scope="col">Product</th>
+                            <th scope="col">Unit Cost</th>
+                            <th scope="col">Total</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="product in sale.sold_products">
+                            <th scope="row">{{product.product_id}}</th>
+                            <td>{{product.qty}}</td>
+                            <td>{{product.UOM}}</td>
+                            <td>{{product.product_name}}</td>
+                            <td>{{product.cost}}</td>
+                            <td>{{product.cost*product.qty}}</td>
+                        </tr>
+
+                    </tbody>
+                </table>
+            </div>
+
+
+        </div>
+    </div>
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
+    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
+    </script>
+</body>
+
+</html>

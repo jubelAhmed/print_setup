@@ -1,0 +1,63 @@
+{ 
+   "sales_order" : [
+
+        {
+            "id": 1,
+            "catagory" : "sales order",
+            "order_date":"12/11/2019",
+            "sales_person":"shueb",
+            "order_id":1234,
+            "company_details":{
+                "shop_name":"The Door Company",
+                "address" : "Dhanmodi,Dhaka",
+                "phone":"+8801782434349"
+
+            },
+            "buyer_info":{
+                "name":"jubel ahmed",
+                "address":"Dhaka",
+                "payment_type":"online",
+                "phone":"+8801783323993"
+            },
+            "shipping_details":{
+                "contact_name":"shakil ahmed",
+                "address":"12/1,bolck A,Dhanmondi 32, Dhaka",
+                "phone":"+8801723323099"
+            },
+            "needed_date":"12/12/2019",
+            "shipped_date":"28/12/2019",
+            "ship_via":"pickup",
+            "terms":"net 30",
+            "sold_products":[
+                {
+                    "product_id":"9033",
+                    "product_name":"plastic door ",
+                    "qty":7,
+                    "cost":2050,
+                    "UOM":"piece"
+
+                },
+                {
+                    "product_id":"8180",
+                    "product_name":"wooden door ",
+                    "qty":3,
+                    "cost":9050,
+                    "UOM":"piece"
+                    
+                },
+                {
+                    "product_id":"8181",
+                    "product_name":"wooden door 7/7",
+                    "qty":2,
+                    "cost":1020,
+                    "UOM":"piece"
+                    
+                }
+            ]
+
+
+            
+        }
+    ]
+
+}

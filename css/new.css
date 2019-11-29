@@ -1,0 +1,12 @@
+html,body{
+    height:297mm;
+    width:210mm;
+    margin:auto;
+    background-color: gray;
+}
+
+table {
+    border:2px solid red;
+  }
+
+
