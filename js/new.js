@@ -10,4 +10,16 @@ app.controller('salesOrderControl' , function($scope , $http){
             $scope.sales = response.data;
     })
 
+   
+
+    $scope.totalSum = function() { 
+        $sum = 0
+        jQuery(".total_cost").each(function() {
+            $sum += Number(this.innerHTML); 
+        });
+        return $sum;
+
+      };  
+
 }) ;
+

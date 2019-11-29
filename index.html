@@ -133,7 +133,11 @@
                             <td>{{product.UOM}}</td>
                             <td>{{product.product_name}}</td>
                             <td>{{product.cost}}</td>
-                            <td>{{product.cost*product.qty}}</td>
+                            <td class='total_cost'>{{product.cost*product.qty}}</td>
+                        </tr>
+                        <tr>
+                            <th scope="row" colspan="5">Total Amount</th>
+                            <td>{{totalSum()}}</td>
                         </tr>
 
                     </tbody>
